@@ -35,6 +35,7 @@ public interface KafkaMetadataExtractor {
       Map<String, String> metadataMap = new HashMap<>();
       metadataMap.put(KafkaStreamMessageMetadata.METADATA_OFFSET_KEY, String.valueOf(record.offset()));
       metadataMap.put(KafkaStreamMessageMetadata.RECORD_TIMESTAMP_KEY, String.valueOf(recordTimestamp));
+      metadataMap.put(KafkaStreamMessageMetadata.RECORD_PARTITION_KEY, String.valueOf(record.partition()));
 
       if (!populateMetadata) {
         return new KafkaStreamMessageMetadata(recordTimestamp, RowMetadata.EMPTY_ROW, metadataMap);
