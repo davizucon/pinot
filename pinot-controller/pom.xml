@@ -19,8 +19,7 @@
     under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>pinot</artifactId>
@@ -225,9 +224,6 @@
             <phase>generate-resources</phase>
             <configuration>
               <arguments>ci</arguments>
-              <environmentVariables>
-                <NODE_TLS_REJECT_UNAUTHORIZED>true</NODE_TLS_REJECT_UNAUTHORIZED>
-              </environmentVariables>
             </configuration>
           </execution>
           <execution>
@@ -238,10 +234,6 @@
             <!-- optional: the default phase is "generate-resources" -->
             <phase>generate-resources</phase>
             <configuration>
-              <environmentVariables>
-                <NODE_TLS_REJECT_UNAUTHORIZED>0</NODE_TLS_REJECT_UNAUTHORIZED>
-              </environmentVariables>
-
               <!-- optional: if not specified, it will run gulp's default task
                   (and you can remove this whole <configuration> section.) -->
               <arguments>run-script ${npm.script}</arguments>
